@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.container-fluid {
+  min-height: 100vh;
+}
+
+h2 {
+  @media (min-width: 576px) {
+    margin-top: -1.5rem;
+  }
+
+  margin-top: -0.5rem;
+}
+
+.modal-open .container-fluid {
+  filter: blur(10px);
+}

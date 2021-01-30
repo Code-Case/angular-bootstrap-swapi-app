@@ -1,0 +1,86 @@
+<header class="header row bg-white border-bottom m-0">
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-6">
+      <nav
+        class="navbar navbar-expand-md navbar-light navbar-inverse navbar-fixed-top"
+      >
+        <a routerLink="/" routerLinkActive="active" class="navbar-brand"
+          ><img
+            alt="Logo"
+            role="img"
+            aria-label="Logo"
+            class="logo"
+            src="../../../assets/img/Star_Wars-Logo.wine.svg"
+        /></a>
+
+        <button
+          type="button"
+          class="navbar-toggler navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-expanded="false"
+          aria-controls="navbar"
+          (click)="isCollapsed = !isCollapsed"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse"
+          id="navbarCollapse"
+          [ngbCollapse]="isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}"
+        >
+          <div class="navbar-nav" (click)="isCollapsed = !isCollapsed">
+            <a
+              routerLink=""
+              routerLinkActive="active"
+              class="nav-item nav-link active"
+              >Star Wars</a
+            >
+            <a
+              routerLink="/actors-list"
+              routerLinkActive="active"
+              class="nav-item nav-link"
+              >Charactere</a
+            >
+            <a
+            routerLink="/film-list"
+            routerLinkActive="active"
+            class="nav-item nav-link"
+            >Filme</a
+          >
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-md-2">
+      <div class="input-group my-4">
+        <input
+          type="search"
+          class="form-control search"
+          placeholder="Suche (dummy)"
+          aria-label="Seite durchsuchen"
+        />
+        <div class="input-group-append">
+          <button class="btn" type="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

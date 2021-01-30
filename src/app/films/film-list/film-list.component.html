@@ -1,0 +1,27 @@
+<div class="row" style="max-width: 80rem; margin: 0 auto">
+  <div class="row mt-5 mb-5">
+    <div class="col"><hr /></div>
+    <div class="col-auto"><h3>Alle Filme</h3></div>
+    <div class="col"><hr /></div>
+  </div>
+  <div
+    class="jumbotron jumbotron-fluid mb-5"
+    *ngFor="let f of films; let i = index"
+  >
+    <h1 class="display-4">{{ f.title }}</h1>
+    <p class="lead">Episode: {{ f.episode_id }} von {{ f.director }}</p>
+    <hr class="my-4" />
+    <p>{{ f.opening_crawl }}</p>
+    <p class="lead">
+      <a
+        class="btn bg-dark text-white"
+        href="#"
+        role="button"
+        routerLink="details"
+        routerLinkActive="active"
+        (click)="openDetails(f)"
+        >Details</a
+      >
+    </p>
+  </div>
+</div>

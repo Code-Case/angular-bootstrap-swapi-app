@@ -1,0 +1,38 @@
+<div class="row" style="min-height: 100vh; max-width: 80rem; margin: 0 auto">
+  <div class="row mt-5 mb-5">
+    <div class="col"><hr /></div>
+    <div class="col-auto">
+      <h3>Alle Charaktere</h3>
+    </div>
+    <div class="col"><hr /></div>
+  </div>
+
+  <div class="col-sm-3" *ngFor="let a of actors; let i = index">
+    <div class="card mb-5">
+      <div class="card-header text-center text-weight-bold">
+        <p class="m-2">{{ a.name }}</p>
+      </div>
+      <img
+        class="card-img-top"
+        alt="{{ a.name }}"
+        src="https://via.placeholder.com/150"
+      />
+
+      <div class="card-body">
+        <p class="card-text">Geschlecht: {{ a.gender }}</p>
+        <p class="card-text">Geburtsjahr: {{ a.birth_year }}</p>
+        <div class="text-center">
+          <button
+            href="#"
+            class="btn bg-dark text-white"
+            routerLink="details"
+            routerLinkActive="active"
+            (click)="openDetails(a)"
+          >
+            Mehr Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
