@@ -24,8 +24,8 @@ export class FilmDetailsComponent implements OnInit {
     this.http.get<IFilm>(`https://swapi.dev/api/films/${id}/`).subscribe(res => {
       this.film = res;
       this.film.characters.map((url: string) => {
-        this.http.get<IActor>(url).subscribe(res => {
-          this.name = res;
+        this.http.get<IActor>(url).subscribe(ress => {
+          this.name = ress;
           this.NameList.push(this.name);
         });
       });
