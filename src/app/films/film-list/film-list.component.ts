@@ -13,7 +13,7 @@ export class FilmListComponent implements OnInit {
 
   @Input() films: IFilm[];
 
-  constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.films = this.route.snapshot.data[`films`];
@@ -24,5 +24,6 @@ export class FilmListComponent implements OnInit {
     const filmId = split[split.length - 2];
     this.router.navigateByUrl(`/film-details/${filmId}`);
   }
+
 
 }

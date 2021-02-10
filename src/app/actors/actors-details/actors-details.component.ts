@@ -7,15 +7,14 @@ import { Router } from '@angular/router';
 import { IActor } from 'src/app/interfaces/Actor';
 
 @Component({
-  // tslint:disable-next-line: component-selector
   selector: 'actors-details',
-  templateUrl: './actor-details.component.html',
-  styleUrls: ['./actor-details.component.scss']
+  templateUrl: './actors-details.component.html',
+  styleUrls: ['./actors-details.component.scss']
 })
 
 
 
-export class ActorDetailsComponent implements OnInit {
+export class ActorsDetailsComponent implements OnInit {
   actor: any;
   planet: any;
   NameList = new Array();
@@ -66,5 +65,7 @@ export class ActorDetailsComponent implements OnInit {
     this.location.back();
   }
 
-
+  identify(a: any): any {
+    return a.name;
+  }
 }

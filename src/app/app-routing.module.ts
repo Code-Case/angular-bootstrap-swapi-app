@@ -15,12 +15,7 @@ const routes: Routes = [
     path: 'films',
     loadChildren: () => import('./films/films.module').then(m => m.FilmsModule)
   },
-  { path: '**', component: PagenotfoundComponent },
-  {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
+  { path: '**', component: PagenotfoundComponent }
 ];
 
 

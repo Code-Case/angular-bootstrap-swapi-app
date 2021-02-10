@@ -4,17 +4,6 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
 
-html,
-body {
-  min-height: 100%;
-  height: auto;
-  margin: 0;
-}
-
-.container-fluid {
-  min-height: 100vh;
-}
-
 h2 {
   @media (min-width: 576px) {
     margin-top: -1.5rem;
@@ -23,6 +12,7 @@ h2 {
   margin-top: -0.5rem;
 }
 
-.modal-open .container-fluid {
-  filter: blur(10px);
+main {
+  max-width: 960px;
+  margin: 0 auto;
 }

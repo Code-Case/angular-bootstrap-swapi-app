@@ -13,14 +13,18 @@ import { IFilm } from 'src/app/interfaces/Film';
 })
 export class FilmDetailsComponent implements OnInit {
   film: any;
-  name: any;
+  name: IActor;
   NameList = new Array();
+
+
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
 
+
     const id = this.activatedRoute.snapshot.paramMap.get('id');
+
     this.http.get<IFilm>(`https://swapi.dev/api/films/${id}/`).subscribe(res => {
       this.film = res;
       this.film.characters.map((url: string) => {

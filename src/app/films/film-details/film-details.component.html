@@ -30,9 +30,8 @@
 
       <a
         *ngFor="let a of NameList; let i = index"
-        href="#"
         class="btn col-sm-6 col-md-3 p-3"
-        routerLink="details"
+        [routerLink]="['actors-details']"
         routerLinkActive="active"
         (click)="openDetails(a)"
       >
@@ -63,12 +62,7 @@
     <div class="col-auto">
       <h3>
         Page not found <br />
-        <a
-          class="btn"
-          href="#"
-          role="button"
-          routerLink="/"
-          routerLinkActive="active"
+        <a class="btn" role="button" routerLink="/" routerLinkActive="active"
           >Zurück zur Startseite</a
         >
       </h3>

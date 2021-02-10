@@ -1,24 +1,23 @@
-<div class="row" style="min-height: 100vh; max-width: 990px; margin: 0 auto">
+<div class="row">
   <div *ngIf="actor; else elseBlock" class="row justify-content-between">
     <div class="row">
       <div class="row mt-5 mb-5">
         <div class="col"><hr /></div>
         <div class="col-auto">
           <h2>{{ actor.name }}</h2>
+          <p class="text-center">
+            Geboren am: {{ actor.birth_year }} auf {{ planet?.name }}
+          </p>
         </div>
         <div class="col"><hr /></div>
       </div>
 
-      <div class="opener-wide text-center">
+      <div class="opener-wide">
         <img
           src="https://via.placeholder.com/970x250"
           class="img-fluid"
           alt="Image from {{ actor.name }} "
         />
-        <hr class="my-4" />
-        <div class="caption">
-          <p>Geboren am: {{ actor.birth_year }} auf {{ planet?.name }}</p>
-        </div>
       </div>
       <hr class="mt-5" />
       <div class="col-sm-6">
@@ -32,8 +31,7 @@
         <h5>Darsteller in</h5>
         <ul class="list-group">
           <li
-            *ngFor="let a of NameList; let i = index"
-            href="#"
+            *ngFor="let a of NameList; trackBy: identify"
             class="btn bg-dark text-white list-group-item m-2"
             routerLink="details"
             routerLinkActive="active"
@@ -47,7 +45,6 @@
       <p class="text-center">
         <button
           class="btn bg-dark text-white"
-          href="#"
           role="button"
           routerLink="/actors-list"
           routerLinkActive="active"
@@ -66,12 +63,7 @@
     <div class="col-auto">
       <h3>
         Page not found <br />
-        <a
-          class="btn"
-          href="#"
-          role="button"
-          routerLink="/"
-          routerLinkActive="active"
+        <a class="btn" role="button" routerLink="/" routerLinkActive="active"
           >Zurück zur Startseite</a
         >
       </h3>

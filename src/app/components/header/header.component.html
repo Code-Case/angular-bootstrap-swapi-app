@@ -31,7 +31,8 @@
           class="collapse navbar-collapse"
           id="navbarCollapse"
           [ngbCollapse]="isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}"
+          [attr.aria-expanded]="!isCollapsed"
+          [ngClass]="{ collapse: isCollapsed }"
         >
           <div class="navbar-nav" (click)="isCollapsed = !isCollapsed">
             <a
@@ -47,11 +48,11 @@
               >Charactere</a
             >
             <a
-            routerLink="/film-list"
-            routerLinkActive="active"
-            class="nav-item nav-link"
-            >Filme</a
-          >
+              routerLink="/film-list"
+              routerLinkActive="active"
+              class="nav-item nav-link"
+              >Filme</a
+            >
           </div>
         </div>
       </nav>

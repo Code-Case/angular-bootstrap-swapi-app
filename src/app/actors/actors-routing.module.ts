@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ActorsListComponent } from './actors-list/actors-list.component';
-import { ActorDetailsComponent } from './actor-details/actor-details.component';
 import { ActorResolverService } from '../resolver/actors-list-resolver.service';
+import { ActorsDetailsComponent } from './actors-details/actors-details.component';
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'actors-details/:id',
-    component: ActorDetailsComponent,
+    component: ActorsDetailsComponent,
 
   }
 ];
