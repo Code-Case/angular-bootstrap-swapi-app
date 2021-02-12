@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { environment } from '../environments/environment';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    SearchComponent
   ],
   imports: [
     ActorsModule,

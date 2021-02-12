@@ -1,0 +1,13 @@
+<input
+  (keyup)="searchTerm$.next($event.target.value)"
+  class="form-control search"
+  type="search"
+/>
+
+<ul *ngIf="results" class="result-list">
+  <li *ngFor="let result of results | slice: 0:9">
+    <a href="{{ result.latest }}" target="_blank">
+      {{ result.name }}
+    </a>
+  </li>
+</ul>
