@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class SearchService {
-  baseUrl: string = 'https://swapi.dev/api/people/';
-  queryUrl: string = '?search=';
+  baseUrl = 'https://swapi.dev/api/people/';
+  queryUrl = '?search=';
 
   constructor(private http: HttpClient) { }
 
-  search(terms: Observable<string>) {
+  search(terms: Observable<string>): any {
     return terms.debounceTime(200)
       .distinctUntilChanged()
       .switchMap(term => this.searchEntries(term));

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -9,10 +9,11 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
-  results: string;
+  results: Object;
   searchTerm$ = new Subject<string>();
 
   constructor(private searchService: SearchService) {
+
     this.searchService.search(this.searchTerm$)
       .subscribe(results => {
         this.results = results.results;
