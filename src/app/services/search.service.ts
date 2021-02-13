@@ -14,7 +14,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   search(terms: Observable<string>) {
-    return terms.debounceTime(400)
+    return terms.debounceTime(200)
       .distinctUntilChanged()
       .switchMap(term => this.searchEntries(term));
   }

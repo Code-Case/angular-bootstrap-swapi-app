@@ -5,9 +5,10 @@ import { Location } from '@angular/common';
 import { IFilm } from 'src/app/interfaces/Film';
 import { Router } from '@angular/router';
 import { IActor } from 'src/app/interfaces/Actor';
+import { IPlanet } from 'src/app/interfaces/Planet';
 
 @Component({
-  selector: 'actors-details',
+  selector: 'app-actors-details',
   templateUrl: './actors-details.component.html',
   styleUrls: ['./actors-details.component.scss']
 })
@@ -15,8 +16,8 @@ import { IActor } from 'src/app/interfaces/Actor';
 
 
 export class ActorsDetailsComponent implements OnInit {
-  actor: any;
-  planet: any;
+  actor: IActor;
+  planet: IPlanet;
   NameList = new Array();
   name: any;
 
@@ -48,7 +49,7 @@ export class ActorsDetailsComponent implements OnInit {
 * Method to get Actors planet by ID
 */
 
-    this.http.get(`https://swapi.dev/api/planets/${id}/`).subscribe(res => {
+    this.http.get<IPlanet>(`https://swapi.dev/api/planets/${id}/`).subscribe(res => {
       this.planet = res;
     });
 
