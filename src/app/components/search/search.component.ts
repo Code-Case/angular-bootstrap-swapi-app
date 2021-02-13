@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { IActor } from 'src/app/interfaces/Actor';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
-  results = new Object;
+  results: IActor;
   searchTerm$ = new Subject<string>();
 
   constructor(private searchService: SearchService) {
