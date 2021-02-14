@@ -17,3 +17,7 @@ main {
   margin: 0 auto;
   clear: both;
 }
+
+.modal-open .container-fluid {
+  filter: blur(10px);
+}
