@@ -1,7 +1,7 @@
 <div class="row">
   <div *ngIf="actor; else elseBlock" class="row justify-content-between">
     <div class="row">
-      <div class="row mt-5 mb-5">
+      <div class="row mt-5">
         <div class="col"><hr /></div>
         <div class="col-auto">
           <h2>{{ actor.name }}</h2>
@@ -14,9 +14,11 @@
 
       <div class="opener-wide">
         <img
-          src="https://via.placeholder.com/970x250"
-          class="img-fluid"
           alt="Image from {{ actor.name }} "
+          role="img"
+          aria-label="Logo"
+          class="teaser-img"
+          src="../../../assets/img/Star_Wars-Logo.wine.svg"
         />
       </div>
       <hr class="mt-5" />

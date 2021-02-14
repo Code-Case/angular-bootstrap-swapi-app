@@ -1,21 +1,17 @@
-<div
-  *ngIf="film; else elseBlock"
-  class="row justify-content-between"
-  style="min-height: 100vh; max-width: 990px; margin: 0 auto"
->
+<div *ngIf="film; else elseBlock" class="row justify-content-between">
   <div class="row">
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5">
       <div class="col"><hr /></div>
       <div class="col-auto">
         <h2>{{ film.title }}</h2>
       </div>
       <div class="col"><hr /></div>
       <img
-        src="https://via.placeholder.com/900x250
-
-      "
-        class="img-fluid"
-        alt="Responsive image"
+        alt="Image from {{ actor.name }} "
+        role="img"
+        aria-label="Logo"
+        class="teaser-img"
+        src="../../../assets/img/Star_Wars-Logo.wine.svg"
       />
       <div class="col mt-4"><hr /></div>
       <div class="col-auto mt-4">
