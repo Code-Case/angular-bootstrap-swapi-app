@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-- ng-bootstrap 8
+- ng-bootstrap 9
 - Bootstrap 5
 - rxjs 6
 - SWAPI API
