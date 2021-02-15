@@ -6,8 +6,8 @@
 
 <ul *ngIf="results" class="result-list">
   <li *ngFor="let result of results">
-    <p href="{{ result.latest }}" target="_blank">
+    <a href="{{ result.latest }}" target="_blank">
       {{ result.name }}
-    </p>
+    </a>
   </li>
 </ul>
