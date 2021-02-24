@@ -9,12 +9,12 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
-  results: Array<any>;
+  results: Object;
   searchTerm$ = new Subject<string>();
 
   constructor(private searchService: SearchService) {
     this.searchService.search(this.searchTerm$)
-      .subscribe((results: { results: any[]; }) => {
+      .subscribe((results) => {
         this.results = results.results;
       });
   }
