@@ -9,7 +9,7 @@ import { SearchService } from '../../services/search.service';
   providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
-  results: Object;
+  results: unknown;
   searchTerm$ = new Subject<string>();
 
   constructor(private searchService: SearchService) {
